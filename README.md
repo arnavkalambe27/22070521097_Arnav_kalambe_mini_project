@@ -41,3 +41,4 @@ A comprehensive comparison of 10 algorithms proved that standard methods were in
 * **Tuning:** **`RandomizedSearchCV`** was used to find the optimal hyperparameters (e.g., `learning_rate=0.01`, `max_depth=9`, `num_leaves=50`) to maximize the **F1-Score** for the 'Yes' class.
 
 ## 📁 Project Structure
+├── Dataset.csv # Original UCI Bank marketing dataset ├── Bank_Marketing_Project.ipynb # Complete project notebook (EDA, 10-Model Comparison, Tuning) ├── final_lgbm_model.pkl # Serialized (saved) final model object for deployment ├── final_plots/ # Directory containing all key visualizations │ ├── final_lgbm_confusion_matrix.png │ ├── final_top5_model_metric_comparison.png │ └── final_lgbm_roc_curve.png
