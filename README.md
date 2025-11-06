@@ -40,5 +40,41 @@ A comprehensive comparison of 10 algorithms proved that standard methods were in
 * **Model:** **LightGBM Classifier** was selected for its best-in-class performance and efficiency.
 * **Tuning:** **`RandomizedSearchCV`** was used to find the optimal hyperparameters (e.g., `learning_rate=0.01`, `max_depth=9`, `num_leaves=50`) to maximize the **F1-Score** for the 'Yes' class.
 
-## 📁 Project Structure
-├── Dataset.csv # Original UCI Bank marketing dataset ├── Bank_Marketing_Project.ipynb # Complete project notebook (EDA, 10-Model Comparison, Tuning) ├── final_lgbm_model.pkl # Serialized (saved) final model object for deployment ├── final_plots/ # Directory containing all key visualizations │ ├── final_lgbm_confusion_matrix.png │ ├── final_top5_model_metric_comparison.png │ └── final_lgbm_roc_curve.png
+## 💻 Dependencies & How to Run
+
+This project was built using Python 3.9+. To replicate the analysis, clone the repository and install the required dependencies.
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [your-github-repo-url-here]
+    cd [repository-name]
+    ```
+
+2.  **Install dependencies:**
+    It is recommended to use a virtual environment.
+    ```bash
+    pip install -r requirements.txt
+    ```
+    Or, install the main libraries manually:
+    ```bash
+    pip install pandas numpy scikit-learn matplotlib seaborn xgboost lightgbm jupyter
+    ```
+
+3.  **Run the notebook:**
+    Launch the Jupyter environment to explore the complete workflow, from initial EDA to final model tuning.
+    ```bash
+    jupyter notebook Bank_Marketing_Project.ipynb
+    ```
+
+## 🚀 Future Enhancements
+
+While the current model is highly effective, future iterations can provide even greater business value:
+
+1.  **Model Explainability:** Implement **SHAP (SHapley Additive exPlanations)** to analyze the feature importance of the final LightGBM model. This will provide actionable business insights into *why* certain clients are more likely to subscribe (e.g., "clients contacted in May" or "clients with 'success' in previous campaigns").
+
+2.  **Cost-Sensitive Tuning:** Develop a **custom loss function** for LightGBM that optimizes directly for **Net Profit**. This involves assigning a real financial cost to a "False Positive" (a wasted call) and a real financial gain to a "True Positive" (a successful sale), moving beyond purely statistical metrics like the F1-Score.
+
+3.  **Advanced Resampling:** Explore the impact of advanced resampling techniques like **SMOTE-Tomek** or **ADASYN** in combination with the cost-sensitive boosting models to see if Precision can be further improved without sacrificing the high Recall.
+
+---
+**Prepared By:** Arnav kalambe
